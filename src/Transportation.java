@@ -42,8 +42,4 @@ public class Transportation {
     public void setIsairport(boolean isairport) {
         this.isairport = isairport;
     }
-
-
-
-
 }

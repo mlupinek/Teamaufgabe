@@ -1,6 +1,3 @@
-/*
-    Aufgabe 3)
-*/
 public class DLNode {
     private Transportation value;
     private DLNode next, prev;
@@ -30,7 +27,6 @@ public class DLNode {
     public DLNode getPrev() {
         return prev;
     }
-
 
     public double diff(double x, double y){
         double a = x - this.value.getX();

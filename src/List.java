@@ -1,6 +1,3 @@
-/*
-    Übung 3, Aufgabe 1)
-*/
 public class List{
     //objectvariables
     private DLNode head, last;
@@ -33,7 +30,7 @@ public class List{
         }
     }
 
-    //Annzahl an Flughäfen/bahnhöfe im radius
+    //return Anzahl an Flughäfen/Bahnhöfe im Radius um x,y.
     public int[] search(double x, double y, double radius){
         int [] sum = new int[2];
         DLNode a = head;
@@ -45,7 +42,6 @@ public class List{
                     sum[1]++;
                 }
             }
-
             a = a.getNext();
         }
         return sum;

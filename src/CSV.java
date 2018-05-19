@@ -47,15 +47,19 @@ public class CSV {
         return counter;
     }
 
-
-
     public static void main(String[] args) {
         CSV csv = new CSV();
         csv.makeList();
-        int [] arr = csv.anzahl(1818.54657,5813.29982, 100);
+        int [] arr = csv.anzahl(1818.54657,5813.29982, 100.0);
+        System.out.println("Bahnhöfe: " + arr[0] + ", Flughäfen: " + arr[1]);
 
-        System.out.println(arr[0] + " " + arr[1]);
-        System.out.println(csv.anzahlBahnhoefe(100,500));
+        arr = csv.anzahl(1818.54657,5813.29982, 50.0);
+        System.out.println("Bahnhöfe: " + arr[0] + ", Flughäfen: " + arr[1]);
+
+        arr = csv.anzahl(1818.54657,5813.29982, 1000);
+        System.out.println("Bahnhöfe: " + arr[0] + ", Flughäfen: " + arr[1]);
+        //System.out.println(csv.anzahlBahnhoefe(15.0,20));
+
 
     }
 }
