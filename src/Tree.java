@@ -1,10 +1,11 @@
 public class Tree {
     private TreeNode root;
-    private int counter;
+    private int[] counter;
+    public int count;
 
     //counter zum searchen
-    public void setCounter(int counter) {
-        this.counter = counter;
+    public void newCounter() {
+        counter = new int[2];
     }
 
     public TreeNode getRoot() {
@@ -52,44 +53,35 @@ public class Tree {
         }
     }
 
-    //print the tree in alphabetically order
-    public void print(){
-        printrecursive(root);
-    }
-
-    //prints recursively the tree in alphabetically order
-    public void printrecursive(TreeNode root){
-                if(root !=null){
-                    printrecursive(root.getLeft());
-                    System.out.println(root.getValue().getName());
-                    printrecursive(root.getRight());
+    public int[] search(TreeNode tree, double x, double y, double radius) {
+        if (tree != null) {
+            if (tree.isVert()) {
+                if (tree.getValue().getX() - radius < tree.getValue().getX()) {
+                    search(tree.getLeft(), x, y, radius);
+                }
+                if (tree.getValue().getX() + radius >= tree.getValue().getX()) {
+                    search(tree.getRight(), x, y, radius);
+                }
+            } else {
+                if (tree.getValue().getY() - radius < tree.getValue().getY()) {
+                    search(tree.getLeft(), x, y, radius);
+                }
+                if (tree.getValue().getY() + radius >= tree.getValue().getY()) {
+                    search(tree.getRight(), x, y, radius);
                 }
             }
-
-    public int search(TreeNode tree, double x, double y, double radius){
-            if (tree != null) {
-                if(tree.isVert()) {
-                    if (tree.getValue().getX() - radius < tree.getValue().getX()) {
-                        search(tree.getLeft(), x, y, radius);
-                    }
-                    if (tree.getValue().getX() + radius >= tree.getValue().getX()) {
-                        search(tree.getRight(), x, y, radius);
-                    }
-                }else{
-                    if (tree.getValue().getY() - radius < tree.getValue().getY()) {
-                        search(tree.getLeft(), x, y, radius);
-                    }
-                    if (tree.getValue().getY() + radius >= tree.getValue().getY()) {
-                        search(tree.getRight(), x, y, radius);
-                    }
-                }
-                if(tree.diff(x,y)<radius ){
-                    counter++;
+            if (tree.diff(x, y) < radius) {
+                if (tree.getValue().isIsairport()) {
+                    counter[0]++;
+                } else {
+                    counter[1]++;
                 }
             }
+        }
         return counter;
     }
- /*
+
+    /*
     //returns the total song-length of the tree
     public long getLaenge(){
         return laengeRecursive(root, 0);
@@ -104,10 +96,20 @@ public class Tree {
         }
         return sum;
     }
-    */
 
-    public static void main(String[] args) {
-
+    //print the tree in alphabetically order
+    public void print(){
+        printrecursive(root);
     }
+
+    //prints recursively the tree in alphabetically order
+    public void printrecursive(TreeNode root){
+        if(root !=null){
+            printrecursive(root.getLeft());
+            System.out.println(root.getValue().getName());
+            printrecursive(root.getRight());
+        }
+    }
+   */
 }
 

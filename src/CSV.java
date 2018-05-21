@@ -58,8 +58,7 @@ public class CSV {
 
         arr = csv.anzahl(1818.54657,5813.29982, 1000);
         System.out.println("Bahnhöfe: " + arr[0] + ", Flughäfen: " + arr[1]);
-        //System.out.println(csv.anzahlBahnhoefe(15.0,20));
-
-
+        System.out.println(csv.anzahlBahnhoefe(10.0,20));
+        //System.out.println(csv.anzahlBahnhoefe(100.0,30));
     }
 }
