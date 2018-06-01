@@ -54,19 +54,20 @@ public class Tree {
     }
 
     public int[] search(TreeNode tree, double x, double y, double radius) {
+
         if (tree != null) {
             if (tree.isVert()) {
-                if (tree.getValue().getX() - radius < tree.getValue().getX()) {
+                if (x - radius <= tree.getValue().getX()) {
                     search(tree.getLeft(), x, y, radius);
                 }
-                if (tree.getValue().getX() + radius >= tree.getValue().getX()) {
+                if (x + radius >= tree.getValue().getX()) {
                     search(tree.getRight(), x, y, radius);
                 }
             } else {
-                if (tree.getValue().getY() - radius < tree.getValue().getY()) {
+                if (y - radius <= tree.getValue().getY()) {
                     search(tree.getLeft(), x, y, radius);
                 }
-                if (tree.getValue().getY() + radius >= tree.getValue().getY()) {
+                if (y + radius >= tree.getValue().getY()) {
                     search(tree.getRight(), x, y, radius);
                 }
             }
