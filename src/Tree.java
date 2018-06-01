@@ -1,7 +1,6 @@
 public class Tree {
     private TreeNode root;
     private int[] counter;
-    public int count;
 
     //counter zum searchen
     public void newCounter() {
@@ -82,35 +81,5 @@ public class Tree {
         return counter;
     }
 
-    /*
-    //returns the total song-length of the tree
-    public long getLaenge(){
-        return laengeRecursive(root, 0);
-    }
-
-    //recursively counts the length of the tree
-    public long laengeRecursive(TreeNode current, long sum) {
-        if (current != null) {
-            return current.getSong().getLaenge()
-        + laengeRecursive(current.getLeft(), sum)
-        + laengeRecursive(current.getRight(), sum);
-        }
-        return sum;
-    }
-
-    //print the tree in alphabetically order
-    public void print(){
-        printrecursive(root);
-    }
-
-    //prints recursively the tree in alphabetically order
-    public void printrecursive(TreeNode root){
-        if(root !=null){
-            printrecursive(root.getLeft());
-            System.out.println(root.getValue().getName());
-            printrecursive(root.getRight());
-        }
-    }
-   */
 }
 

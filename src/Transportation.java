@@ -1,8 +1,18 @@
-public class Transportation {
+public class Transportation implements Comparable{
 
     private String name;
     private double x, y;
     private boolean isairport;
+    @Override
+    public int compareTo(Object o) {
+        if(this.x > ((Transportation)o).x){
+            return 1;
+        }else if (this.x < ((Transportation)o).x){
+            return -1;
+        }else{
+            return 0;
+        }
+    }
 
     public Transportation(String name, double x, double y, boolean isairport) {
         this.name = name;
